@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ninjas!</title>
+	{% load staticfiles %}
+</head>
+<body>
+	{% if displayAll == True %}
+	<img src="{% static 'disappearingNinjaApp/images/donatello.jpg' %}" height="250" width="250" />
+	<img src="{% static 'disappearingNinjaApp/images/leonardo.jpg' %}" height="250" width="250"/>
+	<img src="{% static 'disappearingNinjaApp/images/michelangelo.jpg' %}" height="250" width="250"/>
+	<img src="{% static 'disappearingNinjaApp/images/raphael.jpg' %}" height="250" width="250"/>
+	{% endif %}
+	{% if displayAll == False %}
+		{% if ninjacolor == 'blue'%}
+		<img src="{% static 'disappearingNinjaApp/images/leonardo.jpg' %}" height="250" width="250"/>
+		{% elif ninjacolor == 'orange' %}
+		<img src="{% static 'disappearingNinjaApp/images/michelangelo.jpg' %}" height="250" width="250"/>
+		{% elif ninjacolor == 'red' %}
+		<img src="{% static 'disappearingNinjaApp/images/raphael.jpg' %}" height="250" width="250"/>
+		{% elif ninjacolor == 'purple' %}
+		<img src="{% static 'disappearingNinjaApp/images/donatello.jpg' %}" height="250" width="250"/>
+		{% else %}
+		<img src="{% static 'disappearingNinjaApp/images/notapril.jpg' %}" height="250" width="200"/>
+		{% endif %}
+	{% endif %}
+</body>
+</html>
